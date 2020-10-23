@@ -13,34 +13,32 @@ users = [
 puts "----------------------------"
 
 users.each do |user|
-  name0 = user[:name]
-  age0 = user[:age]
-  height0 = user[:height]
+  name = user[:name]
+  age = user[:age]
+  height = user[:height]
   
-  puts "#{name0}さん"
+  puts "#{name}さん"
   
   # 年齢チェック
-   case age0
-    when (1..64)
-      puts "年齢  #{age0}歳：年齢確認OKです。"
-    when (65..120)
-      puts "年齢  #{age0}歳：年齢確認NGです。"
-   end
+  if age <= 64
+    puts "年齢  #{age}歳：年齢確認OKです。"
+  else
+    puts "年齢  #{age}歳：年齢確認NGです。"
+  end
   # 身長チェック
-    case height0
-      when (1..129)
-        puts "身長  #{height0}cm：身長確認NGです。"
-      when (130..220)
-        puts "身長  #{height0}cm：身長確認OKです。"
-    end
-    puts ""
-    if age0 <= 64 && height0 >= 130
-      puts "ご利用いただけます"
-    else
-      puts "ご利用いただけません"
-    end
+  if height >= 130
+    puts "身長  #{height}cm：身長確認OKです。"
+  else
+    puts "身長  #{height}cm：身長確認NGです。"
+  end
+  puts ""
+  if age <= 64 && height >= 130
+    puts "ご利用いただけます"
+  else
+    puts "ご利用いただけません"
+  end
 
-    puts "----------------------------"
+  puts "----------------------------"
     
 end
 
